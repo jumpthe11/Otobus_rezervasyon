@@ -58,14 +58,14 @@ printf("\n rezervasyon no sayaci :%d \n",sayac);
 return rezervasyon_no;
 
 }
-
+    //AnamenÃ¼ bu kÄ±sÄ±mda. DiÄŸer menÃ¼lere yÃ¶nlendiriyor.
 int Anamenu(int otobusno, int otobusler[30][2][50], char otobusmodel[10][100],char seferno[30][6],char seferbilgileri[30][8],int sefernosayac,char *sehirbaslangic[30][30],char *sehirbitis[30][30],int saat[30][4],float hasilat[30],int kalkis,int seferbitis,char rezervasyon[50][4],char rezervasyon_no[50][8],char *rezervasyonC[50][2][20],int rezervasyon_sayac){
     int tus;
     anamenu:
     printf("\n ANA MENU \n 1. FIRMA GIRISIM \n 2. MUSTERI GIRISI \n 3. CIKIS \n");
 scanf("%d", &tus);
 switch(tus){
-    //firma girisi
+    //Firma girisi
 case 1:
     Firmagiris(otobusno,otobusler,otobusmodel,seferno,seferbilgileri,sefernosayac,sehirbaslangic,sehirbitis,saat,hasilat,kalkis,seferbitis,rezervasyon,rezervasyon_no,rezervasyonC,rezervasyon_sayac);
 
@@ -74,11 +74,13 @@ case 1:
 
 break;
 //firma girisi bitisi
+        
 //musteri girisi
 case 2:
 musterigirisi(otobusno,otobusler,otobusmodel,seferno,seferbilgileri,sefernosayac,sehirbaslangic,sehirbitis,saat,hasilat,kalkis,seferbitis,rezervasyon,rezervasyon_no,rezervasyonC,rezervasyon_sayac);
 break;
 //musteri girisi bitisi
+        
 case 3:
 return 0;
 default:
@@ -141,7 +143,7 @@ printf("\n%d Nolu otobusun Otobus kapasitesi= %d /// Otobus modeli= %s /// Perso
 
 printf("\n");
 
-// TÜM SEFER SEYSILERI BURADA ----------------------------------------
+// TÃœM SEFER SEYSILERI BURADA ----------------------------------------
 printf("\nHangi otobus numarasini istersiniz? \n");
 scanf("%d",&secilenotobus);
 --secilenotobus;
@@ -201,6 +203,7 @@ printf("\n");
 printf("Hangi noyu secmek istersiniz?");
 scanf("%d",&tus);
 tus--;
+        // X sefer nolu rezervasyonnu bilgilerini yazdÄ±rÄ±r.
 printf("Otobus no = %d \n Baslangic sehri = %s \n Bitis sehri = %s \n Kalkis saati = %d \n Bitis saati = %d \n Kisi basi gerir = %0.2f \n Toplam hasilat = %f \n\n\n",seferbilgileri[tus][0]+1,sehirbaslangic[tus],sehirbitis[tus],saat[tus][0],saat[tus][1],hasilat[tus]/otobusler[tus][0][0],hasilat[tus]);
 //printf("Otobus no = %d \n Baslangic sehri = %s \n Bitis sehri = %s \n Kalkis saati = %d \n Bitis saati = %d \n Kisi basi gerir = %d \n Toplam hasilat = %d \n\n\n",seferbilgileri[tus][0]+1,sehirbaslangic[tus],sehirbitis[tus],saat[tus][0],saat[tus][1],hasilat[tus]/otobusler[tus][0][0],hasilat[tus]);
   for(int i=0;i<otobusler[seferbilgileri[tus][0]][0][0];i++){
@@ -255,7 +258,7 @@ printf("\n");
 printf("Hangi noyu secmek istersiniz?");
 scanf("%d",&tus);
 tus--;
-//seferbilgileri[tus][0]
+//X Otobus'un mevcut bilgileri yazar
   for(int i=0;i<otobusler[seferbilgileri[tus][0]][0][0];i++){
             if(otobusler[seferbilgileri[tus][0]][1][i]!=0){
                 //printf("%d.[x]  ",i+1);
@@ -380,7 +383,7 @@ int main()
 {
     int tus;
     int sefernosayac=0;
-    char seferbilgileri[30][7];// 0:otobusno 1:sefer baþlangýç saati 2:Varýþ saati 3:Sefer baþlangýç þehri 4:Sefer varýþ þehri 5:Ýstenen toplam hasiyat 6:Müþteri baþý ücret
+    char seferbilgileri[30][7];// 0:otobusno 1:sefer baÃ¾langÃ½Ã§ saati 2:VarÃ½Ã¾ saati 3:Sefer baÃ¾langÃ½Ã§ Ã¾ehri 4:Sefer varÃ½Ã¾ Ã¾ehri 5:Ãstenen toplam hasiyat 6:MÃ¼Ã¾teri baÃ¾Ã½ Ã¼cret
     char seferno[30][6]; // 0-6: sefer no
     int otobusno=0;
     int otobusler[30][2][50]={NULL}; //ILK DIZI: OTOBUSNO IKINCI DIZI 0: KAPASITE 1:PERsON SAY
